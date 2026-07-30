@@ -8,6 +8,7 @@ type Ring = {
     color: string;
     icon: React.ReactNode;
     label: string;
+    angle: number;      // starting position of the icon, in degrees clockwise from top
 };
 
 type PulsingRing = {
@@ -60,22 +61,26 @@ const IdeationIcon = (
 );
 
 const rings: Ring[] = [
-    { size: 180, duration: 26, direction: 1, color: "#f97316", icon: CodeIcon, label: "Code" },
-    { size: 300, duration: 34, direction: -1, color: "#6366f1", icon: ConfigIcon, label: "Configuration" },
-    { size: 420, duration: 42, direction: 1, color: "#22d3ee", icon: PlanningIcon, label: "Planning" },
-    { size: 540, duration: 50, direction: -1, color: "#ec4899", icon: IdeationIcon, label: "Ideation" },
+    { size: 180, duration: 26, direction: 1, color: "#f97316", icon: CodeIcon, label: "Code", angle: 0 },
+    { size: 360, duration: 34, direction: -1, color: "#6366f1", icon: ConfigIcon, label: "Configuration", angle: 90 },
+    { size: 540, duration: 42, direction: 1, color: "#22d3ee", icon: PlanningIcon, label: "Planning", angle: 210 },
+    { size: 720, duration: 50, direction: -1, color: "#ec4899", icon: IdeationIcon, label: "Ideation", angle: 315 },
 ];
 
+/* All orbiting icons share one outline color so the rings read as a unified set. */
+const ICON_COLOR = "#f97316";
+/* Page background — used to knock the glyph out of the solid orange icon disc. */
+const ICON_KNOCKOUT = "#002c6e";
+
 /* Ambient pulsating rings sized to sit in the gaps between the rotating ones,
-   plus one just inside the smallest and one just outside the largest. */
+   plus one just inside the smallest and two larger ones on the outside. */
 const pulsingRings: PulsingRing[] = [
     { size: 120, color: "#f97316", duration: 6, delay: 0 },
-    { size: 240, color: "#6366f1", duration: 7, delay: 1 },
-    { size: 360, color: "#22d3ee", duration: 5, delay: 2 },
-    { size: 480, color: "#ec4899", duration: 7, delay: 3 },
-    { size: 600, color: "#a78bfa", duration: 6, delay: 4 },
-    { size: 720, color: "#38bdf8", duration: 8, delay: 1.5 },
-    { size: 840, color: "#f472b6", duration: 9, delay: 3.5 },
+    { size: 270, color: "#6366f1", duration: 7, delay: 1 },
+    { size: 450, color: "#22d3ee", duration: 5, delay: 2 },
+    { size: 630, color: "#ec4899", duration: 7, delay: 3 },
+    { size: 840, color: "#38bdf8", duration: 8, delay: 1.5 },
+    { size: 960, color: "#f472b6", duration: 9, delay: 3.5 },
 ];
 
 const BackgroundCogs = () => {
@@ -95,6 +100,11 @@ const BackgroundCogs = () => {
         >
             {rings.map((ring, i) => {
                 const rotation = 360 * ring.direction;
+                const radius = ring.size / 2;
+                const rad = (ring.angle * Math.PI) / 180;
+                // Position on the circle: 0deg = top, measured clockwise.
+                const iconLeft = radius + radius * Math.sin(rad);
+                const iconTop = radius - radius * Math.cos(rad);
                 return (
                     <motion.div
                         key={ring.label}
@@ -109,22 +119,22 @@ const BackgroundCogs = () => {
                             boxShadow: `0 0 24px ${ring.color}15 inset`,
                         }}
                     >
-                        {/* Icon sits at the top of the ring and orbits with it.
+                        {/* Icon sits on the ring at `angle` and orbits with it.
                             Counter-rotate so the icon stays upright while travelling. */}
                         <div
                             style={{
                                 position: "absolute",
-                                top: 0,
-                                left: "50%",
+                                top: iconTop,
+                                left: iconLeft,
                                 transform: "translate(-50%, -50%)",
-                                color: ring.color,
-                                background: "rgb(var(--background-end-rgb, 255,255,255))",
+                                color: ICON_KNOCKOUT,
+                                background: ICON_COLOR,
                                 borderRadius: "9999px",
                                 padding: 8,
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                boxShadow: `0 0 20px ${ring.color}55`,
+                                boxShadow: `0 0 20px ${ICON_COLOR}55`,
                             }}
                         >
                             <motion.div

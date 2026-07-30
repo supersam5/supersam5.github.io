@@ -62,7 +62,7 @@ const categories: Category[] = [
 const Skills: React.FC = () => {
     return (
         <div className="mx-auto w-full max-w-4xl px-4">
-            <h2 className="mb-12 text-center text-3xl font-bold text-orange-500 sm:text-4xl">
+            <h2 className="font-robotic mb-12 text-center text-3xl font-bold text-orange-500 sm:text-4xl">
                 Skills &amp; Experience
             </h2>
             <div className="space-y-8">
@@ -93,7 +93,7 @@ const Skills: React.FC = () => {
                                     <span className="sr-only">{cat.title}</span>
                                 </span>
                                 <h3
-                                    className="text-xl font-semibold"
+                                    className="font-robotic text-xl font-semibold"
                                     style={{ color: cat.color }}
                                 >
                                     {cat.title}

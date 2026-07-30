@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.14.4",
+    "@cloudinary/url-gen": "^1.22.0",
     "framer-motion": "^11.0.25",
-    "next": "14.1.4",
+    "next": "14.2.x",
     "react": "^18",
     "react-dom": "^18",
     "react-simple-typewriter": "^5.0.1",

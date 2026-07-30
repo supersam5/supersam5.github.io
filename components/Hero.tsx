@@ -10,11 +10,11 @@ const Hero: React.FC<IntroFacts> = ({ name, role }) => {
     const [introText, count] = useTypewriter({ 
         words: [
            "Hello I'm "+ name ,
-           "I'm your "+ role,
+           "Your "+ role,
         ], loop: true, delaySpeed: 2000});
     
     return (
-        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
+        <h1 className="font-robotic text-4xl font-bold sm:text-5xl md:text-6xl">
             <span>{introText}</span>
             <Cursor cursorColor="orange" cursorStyle="_"/>
         </h1>
