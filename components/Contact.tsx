@@ -18,7 +18,7 @@ const options = [
         description:
             "Looking for a full breakdown of my experience, roles, and certifications? Fill in a quick form and I'll send my CV over.",
         cta: "Request the CV",
-        link: "https://tally.so/r/rjQ2Kl",
+        link: "https://tally.so/r/44YPoO",
         accent: "#22d3ee",
     },
 ];
