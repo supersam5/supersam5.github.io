@@ -57,13 +57,13 @@ const Header: React.FC = () => {
                 <SocialIcon
                     className="cursor-pointer"
                     network="email"
-                    url="mailto:egembasam@gmail.com"
+                    url="#contact"
                     fgColor='gray'
                     bgColor='transparent'
                 />
-                <p className='uppercase hidden md:inline-flex text-sm text-gray-400'> 
+                <a href="#contact" className='uppercase hidden md:inline-flex text-sm text-gray-400'>
                 Get in touch
-                </p>
+                </a>
             </div>
         </header  >
     );
