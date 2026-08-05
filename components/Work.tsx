@@ -17,42 +17,56 @@ type Role = {
 
 const projects: Project[] = [
     {
-        title: "[Project Name]",
+        title: "Blockchain Decentralized Delivery Network",
         description:
-            "[One or two lines on what this project does, the problem it solves, and your role. Filler text for now — replace with a real description.]",
-        tags: ["[Tech]", "[Tech]", "[Tech]"],
+            "A logistics coordination platform enabling drivers, senders, and recipients to track deliveries without intermediaries — improving transparency in haulage operations.",
+        tags: ["Blockchain", "Node.js", "Logistics"],
         accent: "#f97316",
     },
     {
-        title: "[Project Name]",
+        title: "USSD Agricultural Extension Platform",
         description:
-            "[One or two lines on what this project does, the problem it solves, and your role. Filler text for now — replace with a real description.]",
-        tags: ["[Tech]", "[Tech]", "[Tech]"],
+            "A resource-constrained-friendly platform giving farmers access to agricultural extension services and markets via USSD, built with Node.js, MongoDB, and Africa's Talking.",
+        tags: ["USSD", "Node.js", "MongoDB"],
         accent: "#ec4899",
     },
     {
-        title: "[Project Name]",
+        title: "AI Inventory & Automation Suite",
         description:
-            "[One or two lines on what this project does, the problem it solves, and your role. Filler text for now — replace with a real description.]",
-        tags: ["[Tech]", "[Tech]", "[Tech]"],
+            "AI-powered tools for SMEs to automate inventory management, product research, and customer engagement — built on RAG-based intelligence systems and AI agents.",
+        tags: ["RAG", "AI Agents", "Full-Stack"],
         accent: "#22d3ee",
     },
 ];
 
 const roles: Role[] = [
     {
-        title: "[Role Title]",
-        org: "[Company / Org]",
-        period: "[Start – End]",
+        title: "Product Lead",
+        org: "Youcommerce Technologies LTD",
+        period: "May 2025 – Present",
         summary:
-            "[Short bullet-ish line on scope and impact. Filler text — replace with real responsibilities and outcomes.]",
+            "Lead architecture, model selection, and full-stack development for an AI-powered MVP serving SMEs — building RAG-based intelligence systems, AI agents, and managing cloud cost optimization.",
     },
     {
-        title: "[Role Title]",
-        org: "[Company / Org]",
-        period: "[Start – End]",
+        title: "Technical Lead",
+        org: "ProDriversAfrica",
+        period: "Jan 2025 – Present",
         summary:
-            "[Short bullet-ish line on scope and impact. Filler text — replace with real responsibilities and outcomes.]",
+            "Led end-to-end technical delivery for mobility and driver-management platforms; owned roadmap and workflow design, drove a 400% revenue increase through driver-workflow automation and routing optimization.",
+    },
+    {
+        title: "Software Developer / Assistant Product Manager",
+        org: "EtransitAfrica",
+        period: "Sep 2021 – Sep 2022",
+        summary:
+            "Maintained a large-scale travel and vehicle-hire booking system (PHP/Laravel + AWS EC2); built C#/.NET Core microservices and delivered MVPs for boat cruise, short-let, and private jet booking features.",
+    },
+    {
+        title: "Software Engineer",
+        org: "SIDMACH / Microsoft 4Afrika SkillsLab",
+        period: "Feb 2021 – Jul 2021",
+        summary:
+            "Developed enterprise applications in C#, ASP.NET Core, MVC, and Azure — contributing to a mobile device insurance system and an enterprise HR platform.",
     },
 ];
 

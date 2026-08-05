@@ -27,7 +27,7 @@ const Header: React.FC = () => {
             
             <div className='flex flex-row items-center'>
                 {/* Social Icons */}
-                <SocialIcon url="https://linkedin.com/samuel-d-egemba/"
+                <SocialIcon url="https://linkedin.com/in/samuel-d-egemba-449055151"
                     fgColor='gray'
                     bgColor='transparent'
                  />
@@ -57,6 +57,7 @@ const Header: React.FC = () => {
                 <SocialIcon
                     className="cursor-pointer"
                     network="email"
+                    url="mailto:egembasam@gmail.com"
                     fgColor='gray'
                     bgColor='transparent'
                 />

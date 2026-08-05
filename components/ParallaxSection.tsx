@@ -25,14 +25,16 @@ const ParallaxSection: React.FC<Props> = ({
         offset: ["start end", "end start"],
     });
     // Background moves a little (slower), foreground moves more (faster) → depth.
-    const yBg = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
-    const yFg = useTransform(scrollYProgress, [0, 1], ["18%", "-18%"]);
+    // Amplitudes are kept subtle so tall sections (Skills/Work) don't drift far
+    // enough to clip past the section's overflow-hidden edge.
+    const yBg = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
+    const yFg = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
     return (
         <section
             ref={ref}
             id={id}
-            className="relative flex h-screen snap-start items-center justify-center overflow-hidden"
+            className="relative flex min-h-screen snap-start items-center justify-center overflow-hidden"
         >
             {background && (
                 <motion.div style={{ y: yBg }} className="absolute inset-0 z-0">
@@ -41,7 +43,7 @@ const ParallaxSection: React.FC<Props> = ({
             )}
             <motion.div
                 style={{ y: yFg }}
-                className={`relative z-10 mx-auto w-full ${contentClassName}`}
+                className={`relative z-10 mx-auto w-full py-[18vh] ${contentClassName}`}
             >
                 {children}
             </motion.div>

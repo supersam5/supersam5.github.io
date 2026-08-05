@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Orbitron } from "next/font/google";
 import { useState } from "react";
 import Head from "next/head";
@@ -10,6 +9,8 @@ import MeetSamuel from "@/components/MeetSamuel";
 import Skills from "@/components/Skills";
 import Work from "@/components/Work";
 import ParallaxSection, { SectionBlobs } from "@/components/ParallaxSection";
+import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 const orbitron = Orbitron({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700", "800", "900"],
@@ -22,7 +23,7 @@ const orbitron = Orbitron({
 export default function Home() {
   const [introFacts, setIntroFacts] = useState<IntroFacts>({
     'name': 'Samuel Egemba',
-    'role': 'end-to-end Product Engineer'
+    'role': 'Technical Project Manager & Software Engineer'
   })
   return (
     <>
@@ -30,7 +31,7 @@ export default function Home() {
         <title>Samuel Egemba - Software Developer</title>
       </Head>
       <div
-        className={`${orbitron.variable} relative h-screen snap-y snap-mandatory overflow-y-scroll bg-[#002c6e] text-orange-500`}
+        className={`${orbitron.variable} relative h-screen snap-y snap-proximity overflow-y-scroll bg-[#002c6e] text-orange-500`}
       >
         <Header />
         {/*hero section*/}
@@ -53,6 +54,11 @@ export default function Home() {
         <ParallaxSection id="work" background={<SectionBlobs color="#22d3ee" />}>
           <Work />
         </ParallaxSection>
+        {/*contact section*/}
+        <ParallaxSection id="contact" background={<SectionBlobs color="#f97316" />}>
+          <Contact />
+        </ParallaxSection>
+        <Footer />
       </div>
     </>
   );

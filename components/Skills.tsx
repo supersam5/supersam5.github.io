@@ -30,31 +30,77 @@ const CodeIcon = (
 
 const categories: Category[] = [
     {
-        title: "Product Ideation & Evolution",
+        title: "Product & Delivery",
         color: "#ec4899",
         icon: IdeationIcon,
         skills: [
-            "[Skill — e.g. market research, concept framing]",
-            "[Skill — e.g. user discovery, rapid prototyping]",
-            "[Skill — e.g. roadmapping, iteration planning]",
+            "Technical Project Management",
+            "Product Roadmapping",
+            "Requirements Gathering",
+            "Agile / Scrum",
+            "Stakeholder Management",
+            "Operational Support",
         ],
         experience: [
-            "[Experience — e.g. took an idea from 0 to MVP]",
-            "[Experience — e.g. evolved a product through several iterations]",
+            "Owned roadmap, requirements discovery, and workflow design for driver onboarding, fleet operations, and compliance at ProDriversAfrica.",
+            "Led cross-functional delivery that drove a 400% revenue increase through driver-workflow automation and routing optimization.",
         ],
     },
     {
-        title: "Software Development",
+        title: "Full-Stack Engineering",
         color: "#f97316",
         icon: CodeIcon,
         skills: [
-            "[Skill — e.g. React, Next.js, TypeScript]",
-            "[Skill — e.g. Node.js, REST/GraphQL APIs, databases]",
-            "[Skill — e.g. testing, CI/CD, observability]",
+            "C# / .NET Core",
+            "PHP / Laravel",
+            "Node.js",
+            "React",
+            "Vue.js",
+            "REST APIs",
+            "Microservices",
         ],
         experience: [
-            "[Experience — e.g. shipped a feature end-to-end to production]",
-            "[Experience — e.g. maintained and scaled a service]",
+            "Built C#/.NET Core microservices integrated with a PHP/Laravel monolith via REST APIs and message queues (RabbitMQ).",
+            "Maintained and enhanced a large-scale travel, transit, and vehicle-hire booking system on Laravel + AWS EC2.",
+        ],
+    },
+    {
+        title: "Cloud & DevOps",
+        color: "#22d3ee",
+        icon: CodeIcon,
+        skills: [
+            "Azure",
+            "AWS",
+            "Docker",
+            "Azure DevOps",
+            "GitHub Actions",
+            "CI/CD",
+            "Containerization",
+        ],
+        experience: [
+            "Provisioned and configured Azure cloud resources for enterprise apps at SIDMACH / Microsoft 4Afrika SkillsLab.",
+            "Managed cloud infrastructure, vendor integrations, and technical procurement for scalable, cost-efficient platform operations.",
+        ],
+    },
+    {
+        title: "Data & AI",
+        color: "#a3e635",
+        icon: IdeationIcon,
+        skills: [
+            "MySQL",
+            "MS SQL",
+            "MongoDB",
+            "Redis",
+            "OpenAI API",
+            "RAG Systems",
+            "AI Agents",
+            "LangChain",
+            "Azure AI Foundry",
+            "RabbitMQ",
+        ],
+        experience: [
+            "Developed RAG-based intelligence systems and AI agents for SME inventory, product research, and customer engagement automation.",
+            "Designed data-driven systems for improved driver allocation accuracy, routing efficiency, and operational performance.",
         ],
     },
 ];
@@ -63,7 +109,7 @@ const Skills: React.FC = () => {
     return (
         <div className="mx-auto w-full max-w-4xl px-4">
             <h2 className="font-robotic mb-12 text-center text-3xl font-bold text-orange-500 sm:text-4xl">
-                Skills &amp; Experience
+                Skills
             </h2>
             <div className="space-y-8">
                 {categories.map((cat, i) => {
